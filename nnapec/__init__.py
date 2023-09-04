@@ -21,7 +21,11 @@ from pathlib import Path
 
 if not Path("~/.astromodels/data/nn_apec.h5").expanduser().exists():
 
-    log.info(f"copying emulator to astromodels data directory")
+    if not Path("~/.astromodels/data/").expanduser().exists():
+
+        Path("~/.astromodels/data/").expanduser().mkdir(parents=True)
+
+    log.info("copying emulator to astromodels data directory")
 
     from .utils.package_data import get_path_of_data_file
 

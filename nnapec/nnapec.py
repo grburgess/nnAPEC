@@ -1,3 +1,3 @@
-# -*- coding: utf-8 -*-
+from netspec import EmulatorModel
 
-"""Main module."""
+nn_apec = EmulatorModel("nn_apec")

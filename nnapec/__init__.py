@@ -34,7 +34,7 @@ if not Path("~/.astromodels/data/nn_apec.h5").expanduser().exists():
     shutil.copyfile(emu_path, astro_data_path)
 
 
-from .nnapec import nn_apec
+from .nnapec import get_apec_model
 
 from . import _version
 __version__ = _version.get_versions()['version']

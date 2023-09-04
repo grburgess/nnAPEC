@@ -13,6 +13,12 @@ An emulator for the APEC model
 * Documentation: https://jmichaelburgess.com/nnapec
 
 
+## Installation
+
+```bash
+pip install nnapec
+```
+
 ## How to
 
 The APEC model is incredibly slow. This is not fun.

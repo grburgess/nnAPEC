@@ -86,7 +86,10 @@ _console_formatter = logging.Formatter(
 
 
 nnapec_console_log_handler = RichHandler(
-    level=nnapec_config.logging.level, rich_tracebacks=True, markup=True, console=console
+    level=nnapec_config.logging.level,
+    rich_tracebacks=True,
+    markup=True,
+    console=console,
 )
 nnapec_console_log_handler.setFormatter(_console_formatter)
 

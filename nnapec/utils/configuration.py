@@ -24,13 +24,10 @@ class Logging:
     level: str = "WARNING"
 
 
-
-
 @dataclass
 class nnapecConfig:
 
-    logging: Logging = field(default_factory = Logging)
-
+    logging: Logging = field(default_factory=Logging)
 
 
 # Read the default config
@@ -41,9 +38,7 @@ if _config_file.is_file():
 
     _local_config = OmegaConf.load(_config_file)
 
-    nnapec_config: nnapecConfig = OmegaConf.merge(
-        nnapec_config, _local_config
-    )
+    nnapec_config: nnapecConfig = OmegaConf.merge(nnapec_config, _local_config)
 
 # Write defaults if not
 else:

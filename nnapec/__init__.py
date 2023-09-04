@@ -37,4 +37,5 @@ if not Path("~/.astromodels/data/nn_apec.h5").expanduser().exists():
 from .nnapec import get_apec_model
 
 from . import _version
+
 __version__ = _version.get_versions()['version']

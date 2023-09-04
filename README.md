@@ -51,8 +51,8 @@ photon_flux = nn_apec(energies)
 
 
 * TODO
-** Currently the model is trained with the `AG89` abundances
-** Will train more models if needed
+  *  Currently the model is trained with the `AG89` abundances
+  *  Will train more models if needed
 
 ## Credits
 

@@ -25,37 +25,6 @@ class LogFilter(object):
         return logRecord.levelno != self.__level
 
 
-# now create the developer handler that rotates every day and keeps
-# 10 days worth of backup
-nnapec_dev_log_handler = handlers.TimedRotatingFileHandler(
-    get_path_of_log_file("dev.log"), when="D", interval=1, backupCount=10
-)
-
-# lots of info written out
-
-_dev_formatter = logging.Formatter(
-    "%(asctime)s | %(name)s | %(levelname)s| %(funcName)s | %(lineno)d | %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S",
-)
-
-nnapec_dev_log_handler.setFormatter(_dev_formatter)
-nnapec_dev_log_handler.setLevel(logging.DEBUG)
-# now set up the usr log which will save the info
-
-nnapec_usr_log_handler = handlers.TimedRotatingFileHandler(
-    get_path_of_log_file("usr.log"), when="D", interval=1, backupCount=10
-)
-
-nnapec_usr_log_handler.setLevel(logging.INFO)
-
-# lots of info written out
-_usr_formatter = logging.Formatter(
-    "%(asctime)s | %(levelname)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
-)
-
-nnapec_usr_log_handler.setFormatter(_usr_formatter)
-
-
 _theme = {}
 
 # Banner
@@ -102,7 +71,6 @@ def silence_warnings():
     supress warning messages in console and file usr logs
     """
 
-    nnapec_usr_log_handler.addFilter(warning_filter)
     nnapec_console_log_handler.addFilter(warning_filter)
 
 
@@ -111,7 +79,6 @@ def activate_warnings():
     supress warning messages in console and file usr logs
     """
 
-    nnapec_usr_log_handler.removeFilter(warning_filter)
     nnapec_console_log_handler.removeFilter(warning_filter)
 
 
@@ -131,11 +98,7 @@ def setup_logger(name):
 
     # add the handlers
 
-    log.addHandler(nnapec_dev_log_handler)
-
     log.addHandler(nnapec_console_log_handler)
-
-    log.addHandler(nnapec_usr_log_handler)
 
     # we do not want to duplicate teh messages in the parents
     log.propagate = False

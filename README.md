@@ -3,7 +3,7 @@
 ![PyPI](https://img.shields.io/pypi/v/nnapec)
 ![PyPI - Downloads](https://img.shields.io/pypi/dm/nnapec)
 
-![alt text](https://raw.githubusercontent.com/grburgess/nnapec/master/docs/media/logo.png)
+![alt text](https://raw.githubusercontent.com/grburgess/nnAPEC/master/docs/media/logo.png)
 
 
 An emulator for the APEC model

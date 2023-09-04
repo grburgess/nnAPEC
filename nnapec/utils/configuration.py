@@ -55,7 +55,7 @@ def recurse_dict(d, tree) -> None:
 
     for k, v in d.items():
 
-        if (type(v) == dict) or isinstance(v, DictConfig):
+        if isinstance(v, dict) or isinstance(v, DictConfig):
 
             branch = tree.add(
                 k, guide_style="bold medium_orchid", style="bold medium_orchid"
